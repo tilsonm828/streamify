@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streamify</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">Streamify</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Series</a>
+            <a href="#">My List</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-info">
+            <video id="video" class="hero-info" controls autoplay></video>
+        </div>
+    </section>
+
+    <section class="content-row">
+        <h2>US News</h2>
+        <div class="carousel" id="usNews">
+            <!-- JS will populate content here -->
+        </div>
+    </section>
+
+    <section class="content-row">
+        <h2>World News</h2>
+        <div class="carousel" id="worldNews">
+            <!-- JS will populate content here -->
+        </div>
+    </section>
+
+    <section class="content-row">
+        <h2>Kids TV</h2>
+        <div class="carousel" id="kidsTV">
+            <!-- JS will populate content here -->
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Streamify © 2025</p>
+    </footer>
+
+    <script src="hls.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
