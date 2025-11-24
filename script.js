@@ -51,6 +51,14 @@ const kidsTV = [
     "images/kart.png"
 ];
 
+const localNews = [
+    "images/cbsb.png",
+    "images/cbsy.png",
+    "images/cbss.jpg",
+    "images/cbsl.jpg",
+    "images/cbsm.jpg"
+];
+
 function onThumbnailClick(chName) {
     // images\alja.png
     let newM3u8 = m3u8List[chName];
@@ -73,6 +81,10 @@ function loadRow(rowId) {
             logoSrc = kidsTV;
             urls = kidsTV;
             break;
+        case "localNews":
+            logoSrc = localNews;
+            urls = localNews;
+            break;
         default:
             urls = [];
             break;
@@ -88,10 +100,10 @@ function loadRow(rowId) {
 }
 
 
-
 loadRow("usNews");
 loadRow("worldNews");
 loadRow("kidsTV");
+loadRow("localNews");
 
 
 // --- from file ---
