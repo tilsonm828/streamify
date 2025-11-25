@@ -15,7 +15,7 @@ const m3u8List = {
     // kids tv
     pbsk: "https://livestream.pbskids.org/out/v1/14507d931bbe48a69287e4850e53443c/est.m3u8",
     flix: "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=50&amp;live=1&amp;app_bundle=com.plexapp.desktop",
-    avat: "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5d0c16d686454ead733d08f8/master.m3u8?advertisingId=&appName=web&appStoreUrl=&appVersion=DNT&app_name=&architecture=&buildVersion=&deviceDNT=0&deviceId=5d0c16d686454ead733d08f8&deviceLat=&deviceLon=&deviceMake=web&deviceModel=web&deviceType=web&deviceVersion=DNT&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false&sid=983&terminate=false&userId=",
+    pang: "https://newidco-kidspangtv-1-us.roku.wurl.tv/playlist.m3u8",
     zomo: "https://amg01553-blueantmediaasi-zoomoonz-samsungnz-rdufn.amagi.tv/playlist/amg01553-blueantmediaasi-zoomoonz-samsungnz/playlist.m3u8",
     kart: "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-kartoonchannel-samsungnz/playlist.m3u8",
     // local news
@@ -46,7 +46,7 @@ const worldNews = [
 const kidsTV = [
     "images/pbsk.png",
     "images/flix.png",
-    "images/avat.png",
+    "images/pang.jpg",
     "images/zomo.png",
     "images/kart.png"
 ];
