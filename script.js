@@ -23,7 +23,14 @@ const m3u8List = {
     cbsy: "http://dai.google.com/linear/hls/event/rtcMlf4RTvOEkaudeany5w/master.m3u8",
     cbss: "https://dai.google.com/linear/hls/event/VE8b4n-YStusEGv5Z2NmsQ/master.m3u8",
     cbsl: "https://cbsn-la.cbsnstream.cbsnews.com/out/v1/57b6c4534a164accb6b1872b501e0028/master.m3u8",
-    cbsm: "https://cbsn-mia.cbsnstream.cbsnews.com/out/v1/ac174b7938264d24ae27e56f6584bca0/master.m3u8"
+    cbsm: "https://cbsn-mia.cbsnstream.cbsnews.com/out/v1/ac174b7938264d24ae27e56f6584bca0/master.m3u8",
+    // hkg news
+    rt31: "https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/stream1/streamPlaylist.m3u8",
+    rt32: "https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8",
+    ht78: "https://hoytv-live-stream.hoy.tv/ch78/index.m3u8",
+    ht77: "https://hoytv-live-stream.hoy.tv/ch77/index.m3u8",
+    ht76: "https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8"
+    
 };
 
 // Example movie thumbnails
@@ -59,6 +66,15 @@ const localNews = [
     "images/cbsm.jpg"
 ];
 
+const hkgNews = [
+    "images/rt31.png",
+    "images/rt32.png",
+    "images/ht78.png",
+    "images/ht77.png",
+    "images/ht76.png"
+];
+
+
 function onThumbnailClick(chName) {
     // images\alja.png
     let newM3u8 = m3u8List[chName];
@@ -85,6 +101,10 @@ function loadRow(rowId) {
             logoSrc = localNews;
             urls = localNews;
             break;
+        case "hkgNews":
+            logoSrc = hkgNews;
+            urls = hkgNews;
+            break;
         default:
             urls = [];
             break;
@@ -104,6 +124,7 @@ loadRow("usNews");
 loadRow("worldNews");
 loadRow("kidsTV");
 loadRow("localNews");
+loadRow("hkgNews");
 
 
 // --- from file ---
