@@ -29,7 +29,13 @@ const m3u8List = {
     rt32: "https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/stream5/streamPlaylist.m3u8",
     ht78: "https://hoytv-live-stream.hoy.tv/ch78/index.m3u8",
     ht77: "https://hoytv-live-stream.hoy.tv/ch77/index.m3u8",
-    ht76: "https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8"
+    ht76: "https://hoytv-live-stream.hoy.tv/ch76/index-fhd.m3u8",
+    // hknews website
+    nows: "https://news.now.com/home/live",
+    rthk: "https://www.rthk.hk/",
+    fhxw: "https://www.fengshows.com/live",
+    hoyt: "https://hoy.tv/live?channel_no=78",
+    tvbn: "https://news.tvb.com/tc/live/83"
     
 };
 
@@ -67,19 +73,32 @@ const localNews = [
 ];
 
 const hkgNews = [
-    "images/rt31.png",
-    "images/rt32.png",
-    "images/ht78.png",
-    "images/ht77.png",
-    "images/ht76.png"
+    "images/rt31.jpg",
+    "images/rt32.jpg",
+    "images/ht78.jpg",
+    "images/ht77.jpg",
+    "images/ht76.jpg"
 ];
 
+const hkWeb = [
+    "images/nows.jpg",
+    "images/rthk.jpg",
+    "images/fhxw.jpg",
+    "images/hoyt.jpg",
+    "images/tvbn.jpg"
+];
 
 function onThumbnailClick(chName) {
     // images\alja.png
     let newM3u8 = m3u8List[chName];
     changeM3u8(newM3u8);
 }
+
+function openLink(chName) {
+    let webUrl = m3u8List[chName];
+    window.open(webUrl, "_blank");
+}
+
 
 function loadRow(rowId) {
     const row = document.getElementById(rowId);
@@ -105,18 +124,42 @@ function loadRow(rowId) {
             logoSrc = hkgNews;
             urls = hkgNews;
             break;
+        case "hkWeb":
+            logoSrc = hkWeb;
+            urls = hkWeb;
+            break;
         default:
             urls = [];
             break;
     }
 
-    logoSrc.forEach((url) => {
-        const div = document.createElement("div");
-        div.classList.add("carousel-item");
-        div.style.backgroundImage = `url(${url})`;
-        div.addEventListener("click", () => onThumbnailClick(url.slice(7,11)));
-        row.appendChild(div);
-    });
+    // logoSrc.forEach((url) => {
+    //     const div = document.createElement("div");
+    //     div.classList.add("carousel-item");
+    //     div.style.backgroundImage = `url(${url})`;
+    //     div.addEventListener("click", () => onThumbnailClick(url.slice(7,11)));
+    //     row.appendChild(div);
+    // });
+
+    if (rowId !== "hkWeb") {    // if the link is not m3u8, then open webpage in a new tab
+        urls.forEach((url) => {
+            const div = document.createElement("div");
+            div.classList.add("carousel-item");
+            div.style.backgroundImage = `url(${url})`;
+            div.addEventListener("click", () => onThumbnailClick(url.slice(7,11)));
+            row.appendChild(div);
+        });
+    } else {    // if the link is m3u8, then open in current page
+        urls.forEach((url) => {
+            const div = document.createElement("div");
+            div.classList.add("carousel-item");
+            div.style.backgroundImage = `url(${url})`;
+            // div.addEventListener("click", () => onThumbnailClick(url.slice(7,11)));
+            div.addEventListener("click", () => openLink(url.slice(7,11)));
+            row.appendChild(div);
+        });
+    }
+
 }
 
 
@@ -125,6 +168,7 @@ loadRow("worldNews");
 loadRow("kidsTV");
 loadRow("localNews");
 loadRow("hkgNews");
+loadRow("hkWeb");
 
 
 // --- from file ---
