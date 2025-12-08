@@ -165,10 +165,10 @@ function loadRow(rowId) {
 
 loadRow("usNews");
 loadRow("worldNews");
-loadRow("kidsTV");
 loadRow("localNews");
 loadRow("hkgNews");
 loadRow("hkWeb");
+loadRow("kidsTV");
 
 
 // --- from file ---
